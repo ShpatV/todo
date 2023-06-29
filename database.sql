@@ -1,0 +1,14 @@
+CREATE DATABASE todo;
+
+CREATE TABLE IF NOT EXISTS categories (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tasks (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  category INTEGER REFERENCES categories(id),
+  description TEXT NOT NULL,
+  due_date DATE
+);
