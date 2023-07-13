@@ -26,14 +26,14 @@ class TodoRepository {
     }
   }
 
-  static async createTask(title, category, description, dueDate) {
+  static async createTask(title, category, description, due_date) {
     try {
       const query = `
         INSERT INTO tasks (title, category, description, due_date)
         VALUES ($1, $2, $3, $4)
         RETURNING *
       `;
-      const values = [title, category, description, dueDate];
+      const values = [title, category, description, due_date];
 
       const result = await pool.query(query, values);
       const createdTask = result.rows[0];
@@ -44,7 +44,7 @@ class TodoRepository {
     }
   }
 
-  static async updateTask(taskId, title, category, description, dueDate) {
+  static async updateTask(taskId, title, category, description, due_date) {
     try {
       const query = `
         UPDATE tasks
@@ -52,7 +52,7 @@ class TodoRepository {
         WHERE id = $5
         RETURNING *
       `;
-      const values = [title, category, description, dueDate, taskId];
+      const values = [title, category, description, due_date, taskId];
 
       const result = await pool.query(query, values);
       const updatedTask = result.rows[0];

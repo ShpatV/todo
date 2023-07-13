@@ -1,9 +1,9 @@
 class Todo {
-    constructor(id, description, categoryId, dueDate) {
+    constructor(id, description, categoryId, due_date) {
       this.id = id;
       this.description = description;
       this.categoryId = categoryId;
-      this.dueDate = dueDate;
+      this.due_date = due_date;
     }
   }
   

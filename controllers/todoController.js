@@ -28,7 +28,7 @@ async function getTaskById(req, res) {
 
 async function createTask(req, res) {
   try {
-    const { title, category, description, dueDate } = req.body;
+    const { title, category, description, due_date } = req.body;
 
     // Perform data validation
 
@@ -39,12 +39,12 @@ async function createTask(req, res) {
     }
 
     // Example validation: Checking if due date is in the future
-    if (dueDate && new Date(dueDate) < new Date()) {
+    if (due_date && new Date(due_date) < new Date()) {
       res.status(400).json({ error: "Due date cannot be in the past" });
       return;
     }
 
-    const createdTask = await todoRepository.createTask(title, category, description, dueDate);
+    const createdTask = await todoRepository.createTask(title, category, description, due_date);
     res.status(201).json(createdTask);
   } catch (error) {
     console.error(error);
@@ -55,7 +55,7 @@ async function createTask(req, res) {
 async function updateTask(req, res) {
   try {
     const { taskId } = req.params;
-    const { title, category, description, dueDate } = req.body;
+    const { title, category, description, due_date } = req.body;
 
     // Perform data validation
 
@@ -66,12 +66,12 @@ async function updateTask(req, res) {
     }
 
     // Example validation: Checking if due date is in the future
-    if (dueDate && new Date(dueDate) < new Date()) {
+    if (due_date && new Date(due_date) < new Date()) {
       res.status(400).json({ error: "Due date cannot be in the past" });
       return;
     }
 
-    const updatedTask = await todoRepository.updateTask(taskId, title, category, description, dueDate);
+    const updatedTask = await todoRepository.updateTask(taskId, title, category, description, due_date);
 
     if (!updatedTask) {
       res.status(404).json({ error: "Task not found" });

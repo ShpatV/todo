@@ -109,7 +109,6 @@ const todoController = require("../controllers/todoController");
  *         description: Gabim gjatë kërkesës
  */
 router.get("/tasks", todoController.getAllTasks);
-router.get("/tasks", todoController.getAllTasks);
 router.get("/tasks/:taskId", todoController.getTaskById);
 router.post("/tasks", todoController.createTask);
 router.put("/tasks/:taskId", todoController.updateTask);

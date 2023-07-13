@@ -1,0 +1,141 @@
+body {
+    background-color: rgb(211, 220, 226);
+    font-family: 'Calibri', sans-serif !important;
+  }
+  
+  .container {
+    margin-top: 100px;
+  }
+  
+  .card {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+    margin-right: 20px;
+  }
+  
+  .card:last-child {
+    margin-right: 0;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 23px;
+  }
+  
+  .card-text {
+    margin-bottom: 5px;
+    font-size: 17px;
+  }
+  
+  .card-date {
+    color: #999;
+    font-size: 12px;
+  }
+  
+  .card-category {
+    color: #666;
+    font-size: 17px;
+  }
+  
+  .card-buttons {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .card-buttons button {
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .pagination li a {
+    display: block;
+    padding: 10px 10px;
+    background-color: #e9ecef;
+    color: #333;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  .pagination li.active a {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .pagination li a:hover {
+    background-color: #ccc;
+  }
+  .modal-content {
+    border-radius: 4px;
+  }
+  
+  .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+  }
+  
+  .modal-title {
+    font-weight: bold;
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+    background-color: #ffffff;
+  }
+  
+  .modal-footer {
+    border-top: none;
+    justify-content: flex-start;
+  }
+  
+  .modal-footer button {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  .modal-body input {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .modal-footer {
+    border-top: none;
+    justify-content: flex-end;
+  }
+  
+  .modal-footer button {
+    padding: 10px;
+    margin-right: 8px;
+    font-size: 14px;
+    background-color: #007bff;
+  }
