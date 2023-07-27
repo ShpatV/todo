@@ -1,7 +1,47 @@
-const express = require("express");
+/* eslint-disable @typescript-eslint/no-var-requires */
+const express = require('express');
 const router = express.Router();
-const todoController = require("../controllers/todoController");
+const todoController = require('../controllers/todoController');
+const errorHandlerMiddleware = require('../error/errorHandlerMiddleware');
 
+
+
+router.get('/tasks', todoController.getAllTasks);
+router.get('/tasks/:taskId', todoController.getTaskById);
+router.post('/tasks', todoController.createTask);
+router.put('/tasks/:taskId', todoController.updateTask);
+router.delete('/tasks/:taskId', todoController.deleteTask);
+
+router.use(errorHandlerMiddleware);
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Task:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *         title:
+ *           type: string
+ *         description:
+ *           type: string
+ *         categoryId:
+ *           type: string
+ *         due_date:
+ *           type: string
+ *           format: date
+ *     Category:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *         name:
+ *           type: string
+ *         description:
+ *           type: string
+ */
 
 /**
  * @swagger
@@ -40,6 +80,8 @@ const todoController = require("../controllers/todoController");
 
 /**
  * @swagger
+ /**
+ * @swagger
  * /api/tasks:
  *   post:
  *     summary: Krijo një Task të ri
@@ -49,7 +91,17 @@ const todoController = require("../controllers/todoController");
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Task'
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               description:
+ *                 type: string
+ *               category:
+ *                 type: integer
+ *               due_date:
+ *                 type: string
+ *                 format: date
  *     responses:
  *       201:
  *         description: Task-i u krijua me sukses
@@ -58,6 +110,7 @@ const todoController = require("../controllers/todoController");
  *       500:
  *         description: Gabim gjatë kërkesës
  */
+
 
 /**
  * @swagger
@@ -108,10 +161,7 @@ const todoController = require("../controllers/todoController");
  *       500:
  *         description: Gabim gjatë kërkesës
  */
-router.get("/tasks", todoController.getAllTasks);
-router.get("/tasks/:taskId", todoController.getTaskById);
-router.post("/tasks", todoController.createTask);
-router.put("/tasks/:taskId", todoController.updateTask);
-router.delete("/tasks/:taskId", todoController.deleteTask);
+
+
 
 module.exports = router;

@@ -1,9 +1,12 @@
-const express = require("express");
+/* eslint-disable @typescript-eslint/no-var-requires */
+const express = require('express');
+const errorHandlerMiddleware = require('./error/errorHandlerMiddleware');
 const app = express();
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
-const cors = require("cors");
-const todoRoutes = require("./routes/todoRoutes");
+const cors = require('cors');
+const todoRoutes = require('./routes/todoRoutes');
+
 
 const port = 5000;
 
@@ -35,6 +38,10 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, { explorer: t
 // Routes
 app.use('/api', todoRoutes);
 
+app.use(errorHandlerMiddleware);
+
+
 app.listen(port, () => {
   console.log(`Server has started on port ${port}`);
 });
+

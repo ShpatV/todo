@@ -1,0 +1,42 @@
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+  }
+  
+  .card {
+    width: 500px;
+    
+   
+  
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+
+  .form-control {
+    height: 50px;
+    font-size: 16px;
+  }
+  .alert-danger {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    background: none;
+    border: none;
+    color: red;
+  }
+  
+  /* Stilizimi për alertat e suksesit */
+  .alert-success {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    background: none;
+    border: 2px solid #28a745; /* Borderi i gjelbërt për alertat e suksesit */
+    color: #28a745; /* Ngjyra e gjelbërt për tekst në alertat e suksesit */
+  }
